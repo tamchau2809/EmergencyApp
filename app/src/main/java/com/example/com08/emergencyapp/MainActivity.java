@@ -1,24 +1,37 @@
 package com.example.com08.emergencyapp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
+    Button btnSubmit;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnSubmit = (Button)findViewById(R.id.btnSubmit);
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new SubmitNoti().execute();
+            }
+        });
 
         preferences = this.getSharedPreferences("emergency", MODE_APPEND);
         if(!preferences.getBoolean("isLogin", false))
@@ -26,18 +39,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
         }
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        TextView tv = (TextView) findViewById(R.id.tvTest);
-        tv.setText("A");
     }
 
     @Override
@@ -70,12 +71,34 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_logout) {
             preferences.edit().clear().apply();
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    class SubmitNoti extends AsyncTask<Void, Void, String>
+    {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressDialog = new ProgressDialog(getBaseContext());
+            progressDialog.setMessage("Getting Data...");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+        }
     }
 }

@@ -45,6 +45,16 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        if(!preferences.getBoolean("isLogin", false)) {
+            Intent startMain = new Intent(Intent.ACTION_MAIN);
+            startMain.addCategory(Intent.CATEGORY_HOME);
+            startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(startMain);
+        }
+    }
+
     class Authenticate extends AsyncTask<Void, Void, String>
     {
         String usr, pass;
@@ -73,8 +83,7 @@ public class LoginActivity extends AppCompatActivity {
             return null;
         }
 
-        private String authentication(String requestURL)
-        {
+        private String authentication(String requestURL) {
             String result = "";
             String charset = "UTF-8";
 
@@ -95,8 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                     System.out.println(line);
                     result = line;
                 }
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
