@@ -31,18 +31,21 @@
             android:orientation="vertical"
             android:id="@+id/lnrSituation" >
             <CheckBox
+                android:id="@+id/cbBlcatActiv"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/blcat_activation"/>
             <CheckBox
+                android:id="@+id/cbCmtNotif"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cmt_notification"/>
             <CheckBox
+                android:id="@+id/cbCmtActiv"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
@@ -70,18 +73,21 @@
             android:orientation="horizontal"
             android:id="@+id/lnrStation" >
             <CheckBox
+                android:id="@+id/cbEmail"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/email"/>
             <CheckBox
+                android:id="@+id/cbSMS"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sms"/>
             <CheckBox
+                android:id="@+id/cbTel"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
@@ -109,18 +115,21 @@
             android:orientation="horizontal"
             android:id="@+id/lnrReceiver" >
             <CheckBox
+                android:id="@+id/cbBlcat1"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/blcat_1"/>
             <CheckBox
+                android:id="@+id/cbBlcat2"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/blcat_2"/>
             <CheckBox
+                android:id="@+id/cbSME"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"

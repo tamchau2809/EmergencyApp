@@ -21,7 +21,6 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public static String URL_LOGIN = "http://192.168.1.12/chauvu/emergency/test.php?checkLogin=true";
     private EditText edUsername, edPass;
     ProgressDialog progressDialog;
     SharedPreferences preferences;
@@ -74,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         protected String doInBackground(Void... params) {
             try
             {
+                String URL_LOGIN = "http://192.168.1.12/chauvu/emergency/test.php?login_mg=true";
                 return authentication(URL_LOGIN);
             }
             catch (Exception e)
@@ -120,6 +120,7 @@ public class LoginActivity extends AppCompatActivity {
             {
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putBoolean("isLogin", true);
+                editor.putString("username", usr);
                 editor.apply();
 
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
