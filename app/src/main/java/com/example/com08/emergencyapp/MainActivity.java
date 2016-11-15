@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 
+import com.example.com08.emergencyapp.customthings.ConstantStuff;
 import com.example.com08.emergencyapp.customthings.UploadFile;
 
 import java.io.IOException;
@@ -367,8 +368,9 @@ public class MainActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             progressDialog = new ProgressDialog(MainActivity.this);
-            progressDialog.setMessage("Please wait...");
+            progressDialog.setMessage("Xin chờ trong giây lát...");
             progressDialog.setCancelable(false);
+            progressDialog.setIndeterminateDrawable(getDrawable(R.drawable.test_animated));
             progressDialog.show();
         }
 
@@ -422,6 +424,7 @@ public class MainActivity extends AppCompatActivity {
             progressDialog = new ProgressDialog(MainActivity.this);
             progressDialog.setMessage("See Ya...");
             progressDialog.setCancelable(false);
+            progressDialog.setIndeterminateDrawable(getDrawable(R.drawable.test_animated));
             progressDialog.show();
             username = preferences.getString("username", "");
         }
@@ -430,8 +433,7 @@ public class MainActivity extends AppCompatActivity {
         protected Void doInBackground(Void... params) {
             try
             {
-                String URL_LOGIN = "http://192.168.1.12/chauvu/emergency/test.php?logOut=true";
-                logout(URL_LOGIN);
+                logout(ConstantStuff.URL_LOGOUT);
             }
             catch (Exception e)
             {

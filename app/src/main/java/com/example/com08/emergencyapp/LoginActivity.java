@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.com08.emergencyapp.customthings.ConstantStuff;
 import com.example.com08.emergencyapp.customthings.UploadFile;
 
 import java.io.IOException;
@@ -65,16 +66,18 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            progressDialog = ProgressDialog.show(LoginActivity.this,"Loading...",
-                    "Loading application View, please wait...", false, false);
+            progressDialog = new ProgressDialog(LoginActivity.this);
+            progressDialog.setMessage("Đang đăng nhập...");
+            progressDialog.setIndeterminateDrawable(getDrawable(R.drawable.test_animated));
+            progressDialog.setCancelable(false);
+            progressDialog.show();
         }
 
         @Override
         protected String doInBackground(Void... params) {
             try
             {
-                String URL_LOGIN = "http://192.168.1.12/chauvu/emergency/test.php?login_mg=true";
-                return authentication(URL_LOGIN);
+                return authentication(ConstantStuff.URL_LOGIN);
             }
             catch (Exception e)
             {
