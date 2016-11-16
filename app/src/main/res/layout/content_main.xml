@@ -7,8 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.com08.emergencyapp.MainActivity"
@@ -19,16 +17,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
         <TextView
+            android:drawableStart="@drawable/alert"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/alert"
+            android:drawablePadding="5dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:id="@+id/tvSituation"
             android:textSize="20sp"
             android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/situations" />
         <LinearLayout
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
+            android:background="#88C6ED"
             android:id="@+id/lnrSituation" >
             <CheckBox
                 android:id="@+id/cbBlcatActiv"
@@ -60,89 +66,130 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
         <TextView
+            android:drawableStart="@drawable/station"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/station"
+            android:drawablePadding="5dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:id="@+id/tvStation"
             android:textSize="20sp"
             android:gravity="center"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/station" />
+
         <LinearLayout
-            android:gravity="center|center_vertical|center_horizontal"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/lnrStation" >
+            android:background="#88C6ED"
+            android:weightSum="9"
+            android:id="@+id/lnrStation">
+
             <CheckBox
+                android:layout_weight="4"
                 android:id="@+id/cbEmail"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/email"/>
+                android:text="@string/email"
+                android:gravity="center|start" />
+
             <CheckBox
+                android:layout_weight="4"
                 android:id="@+id/cbSMS"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sms"/>
+                android:text="@string/sms"
+                android:gravity="center|start" />
+
             <CheckBox
+                android:layout_weight="1"
                 android:id="@+id/cbTel"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/telephone"/>
+                android:text="@string/telephone"
+                android:gravity="center|start" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:orientation="vertical"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
+
         <TextView
+            android:drawableStart="@drawable/receiver"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/receiver"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:drawablePadding="5dp"
             android:id="@+id/tvReceiver"
             android:textSize="20sp"
-            android:gravity="center"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/receiver" />
+            android:text="@string/receiver"
+            android:gravity="center" />
+
         <LinearLayout
-            android:gravity="center|center_vertical|center_horizontal"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:id="@+id/lnrReceiver" >
+            android:background="#88C6ED"
+            android:weightSum="3"
+            android:id="@+id/lnrReceiver">
+
             <CheckBox
+                android:layout_weight="1"
                 android:id="@+id/cbBlcat1"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/blcat_1"/>
+                android:text="@string/blcat_1"
+                android:gravity="center|start" />
+
             <CheckBox
+                android:layout_weight="1"
                 android:id="@+id/cbBlcat2"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/blcat_2"/>
+                android:text="@string/blcat_2"
+                android:gravity="center|start" />
+
             <CheckBox
+                android:layout_weight="1"
                 android:id="@+id/cbSME"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sme"/>
+                android:text="@string/sme"
+                android:textAllCaps="false"
+                android:gravity="center|start" />
         </LinearLayout>
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnSubmit"
         android:layout_marginTop="50dp"
-        android:layout_gravity="bottom"
-        android:layout_width="match_parent"
+        android:background="@drawable/button_accept"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/submit"/>
+        android:gravity="center_vertical"
+        android:contentDescription="@string/btn" />
 </LinearLayout>

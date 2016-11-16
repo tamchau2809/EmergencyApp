@@ -18,4 +18,5 @@
     <string name="blcat_2">BLCAT 2</string>
     <string name="sme">SME</string>
     <string name="receiver">Người Nhận:</string>
+    <string name="btn">Button</string>
 </resources>

@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.example.com08.emergencyapp.customthings.ConstantStuff;
@@ -23,7 +24,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
-    Button btnSubmit;
+    ImageButton btnSubmit;
     ProgressDialog progressDialog;
     CheckBox cbBlcatActiv, cbCmtNotif, cbCmtActiv;
     CheckBox cbEmail, cbSMS, cbTel;
@@ -307,7 +308,7 @@ public class MainActivity extends AppCompatActivity {
         cbBlcat1 = (CheckBox)findViewById(R.id.cbBlcat1);
         cbBlcat2 = (CheckBox)findViewById(R.id.cbBlcat2);
         cbSME = (CheckBox)findViewById(R.id.cbSME);
-        btnSubmit = (Button)findViewById(R.id.btnSubmit);
+        btnSubmit = (ImageButton)findViewById(R.id.btnSubmit);
         lnrSituation = (LinearLayout)findViewById(R.id.lnrSituation);
         lnrStation = (LinearLayout)findViewById(R.id.lnrStation);
         lnrReceiver = (LinearLayout)findViewById(R.id.lnrReceiver);
@@ -335,6 +336,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(startMain);
         }
     }
+
+//    @Override
+//    protected void onStop() {
+//        new Logout().execute();
+//        super.onStop();
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
