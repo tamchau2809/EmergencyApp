@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">Emergency Notification</string>
-    <string name="action_logout">Logout</string>
-    <string name="input_username">Username</string>
-    <string name="prompt_password">Password</string>
+    <string name="app_name">Thông Báo Khẩn</string>
+    <string name="action_logout">Đăng Xuất</string>
+    <string name="input_username">Tên Đăng Nhập</string>
+    <string name="prompt_password">Mật Khẩu</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="btn_sign_in">Sign in</string>
-    <string name="situations">Situation:</string>
+    <string name="btn_sign_in">Đăng Nhập</string>
+    <string name="situations">Tình Huống:</string>
     <string name="blcat_activation">BLCAT Activation</string>
     <string name="cmt_notification">CMT Notification</string>
     <string name="cmt_activation">CMT Activation</string>
-    <string name="station">Station:</string>
+    <string name="station">Kênh Phát:</string>
     <string name="email">Email</string>
     <string name="sms">SMS</string>
     <string name="telephone">Telephone</string>
@@ -17,6 +17,6 @@
     <string name="blcat_1">BLCAT 1</string>
     <string name="blcat_2">BLCAT 2</string>
     <string name="sme">SME</string>
-    <string name="receiver">Receiver:</string>
+    <string name="receiver">Người Nhận:</string>
     <string name="btn">Button</string>
 </resources>

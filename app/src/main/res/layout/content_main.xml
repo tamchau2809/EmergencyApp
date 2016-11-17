@@ -187,8 +187,8 @@
         android:id="@+id/btnSubmit"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:gravity="center_vertical"
         android:contentDescription="@string/btn"
         android:background="@drawable/button_accept" />

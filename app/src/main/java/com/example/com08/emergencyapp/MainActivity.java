@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
@@ -30,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
     CheckBox cbEmail, cbSMS, cbTel;
     CheckBox cbBlcat1, cbBlcat2, cbSME;
     LinearLayout lnrSituation, lnrStation, lnrReceiver;
-    boolean isStationReady = false;
-    boolean isReceiverReady = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -265,37 +262,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setEnableStation()
-    {
-        isStationReady = !cbBlcatActiv.isChecked() && !cbCmtNotif.isChecked() && !cbCmtActiv.isChecked();
-        if(!isStationReady)
-        {
-            if(cbEmail.isChecked() || cbSMS.isChecked() || cbTel.isChecked())
-            {
-                cbBlcat1.setEnabled(true);
-                cbBlcat2.setEnabled(true);
-                cbSME.setEnabled(true);
-            }
-        }
-        cbEmail.setEnabled(!isStationReady);
-        cbSMS.setEnabled(!isStationReady);
-        cbTel.setEnabled(!isStationReady);
-    }
-
-    private void setEnableReceiver()
-    {
-        isReceiverReady = !cbEmail.isChecked() && !cbSMS.isChecked() && !cbTel.isChecked();
-        cbBlcat1.setEnabled(!isReceiverReady);
-        cbBlcat2.setEnabled(!isReceiverReady);
-        cbSME.setEnabled(!isReceiverReady);
-    }
-
-    private void setEnableButton()
-    {
-        boolean isReady = !cbBlcat1.isChecked() && !cbBlcat2.isChecked() && !cbSME.isChecked();
-        btnSubmit.setEnabled(!isReady);
-    }
-
     private void initWidget()
     {
         preferences = this.getSharedPreferences("emergency", MODE_APPEND);
@@ -384,7 +350,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... params) {
             String URL_SUBMIT = "http://192.168.1.12/chauvu/emergency/test.php?checkLogin=true";
-
+            try
+            {
+                return uploadData(URL_SUBMIT);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
             return null;
         }
 
