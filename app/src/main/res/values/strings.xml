@@ -19,4 +19,7 @@
     <string name="sme">SME</string>
     <string name="receiver">Receiver:</string>
     <string name="btn">Button</string>
+    <string name="loging_in">Longing in...</string>
+    <string name="plz_wait">Please wait...</string>
+    <string name="gbye">See Ya...</string>
 </resources>

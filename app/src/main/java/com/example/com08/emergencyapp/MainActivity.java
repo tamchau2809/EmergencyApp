@@ -341,7 +341,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             progressDialog = new ProgressDialog(MainActivity.this);
-            progressDialog.setMessage("Xin chờ trong giây lát...");
+            progressDialog.setMessage(getResources().getString(R.string.plz_wait));
             progressDialog.setCancelable(false);
             progressDialog.setIndeterminateDrawable(getDrawable(R.drawable.test_animated));
             progressDialog.show();
@@ -402,7 +402,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             progressDialog = new ProgressDialog(MainActivity.this);
-            progressDialog.setMessage("See Ya...");
+            progressDialog.setMessage(getResources().getString(R.string.gbye));
             progressDialog.setCancelable(false);
             progressDialog.setIndeterminateDrawable(getDrawable(R.drawable.test_animated));
             progressDialog.show();

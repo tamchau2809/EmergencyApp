@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             progressDialog = new ProgressDialog(LoginActivity.this);
-            progressDialog.setMessage("Đang đăng nhập...");
+            progressDialog.setMessage(getResources().getString(R.string.loging_in));
             progressDialog.setIndeterminateDrawable(getDrawable(R.drawable.test_animated));
             progressDialog.setCancelable(false);
             progressDialog.show();

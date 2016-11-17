@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="#88C6ED"
+            android:background="@color/colorChecbox"
             android:id="@+id/lnrSituation" >
             <CheckBox
                 android:id="@+id/cbBlcatActiv"
@@ -84,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="#88C6ED"
+            android:background="@color/colorChecbox"
             android:weightSum="9"
             android:id="@+id/lnrStation">
 
@@ -146,7 +146,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:background="#88C6ED"
+            android:background="@color/colorChecbox"
             android:weightSum="3"
             android:id="@+id/lnrReceiver">
 
