@@ -1,10 +1,13 @@
 package com.example.com08.emergencyapp;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -39,8 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Authenticate(edUsername.getText().toString(),
-                        edPass.getText().toString()).execute();
+                    new Authenticate(edUsername.getText().toString(),
+                            edPass.getText().toString()).execute();
             }
         });
     }
@@ -55,7 +58,32 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    class Authenticate extends AsyncTask<Void, Void, String>
+    private void showAlert(String message) {
+
+        final AlertDialog alertDialog = new AlertDialog.Builder(this)
+                .setTitle(message)
+//                .setIcon(ContextCompat.getDrawable(getApplicationContext(), R.drawable.warning))
+                .setPositiveButton(
+                        android.R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                            }
+                        })
+                .create();
+
+        alertDialog.setCancelable(false);
+        alertDialog.show();
+
+        View btnTest = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+        btnTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+    }
+
+
+        class Authenticate extends AsyncTask<Void, Void, String>
     {
         String usr, pass;
         Authenticate(String username, String pass)
@@ -128,6 +156,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
+            }
+            else
+            {
+                showAlert(getResources().getString(R.string.alert_wrong_input));
             }
         }
     }

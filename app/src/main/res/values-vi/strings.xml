@@ -3,7 +3,7 @@
     <string name="action_logout">Đăng Xuất</string>
     <string name="input_username">Tên Đăng Nhập</string>
     <string name="prompt_password">Mật Khẩu</string>
-    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_in_short">Đăng Nhập</string>
     <string name="btn_sign_in">Đăng Nhập</string>
     <string name="situations">Tình Huống:</string>
     <string name="blcat_activation">BLCAT Activation</string>
@@ -22,4 +22,5 @@
     <string name="loging_in">Đang đăng nhập...</string>
     <string name="plz_wait">Xin chờ trong giây lát...</string>
     <string name="gbye">Bái bai..</string>
+    <string name="alert_wrong_input">Vui lòng kiểm tra lại Tên Người Dùng hoặc Mật Khẩu!!</string>
 </resources>
