@@ -19,8 +19,8 @@
     <string name="sme">SME</string>
     <string name="receiver">Người Nhận:</string>
     <string name="btn">Button</string>
-    <string name="loging_in">Đang đăng nhập...</string>
-    <string name="plz_wait">Xin chờ trong giây lát...</string>
+    <string name="loging_in">Đang đăng nhập…</string>
+    <string name="plz_wait">Xin chờ trong giây lát…</string>
     <string name="gbye">Bái bai..</string>
     <string name="alert_wrong_input">Vui lòng kiểm tra lại Tên Người Dùng hoặc Mật Khẩu!!</string>
 </resources>

@@ -5,6 +5,6 @@ package com.example.com08.emergencyapp.customthings;
  */
 
 public class ConstantStuff {
-    public static String URL_LOGIN = "http://192.168.1.13/chauvu/emergency/test.php?login_mg=true";
-    public static String URL_LOGOUT = "http://192.168.1.13/chauvu/emergency/test.php?logOut=true";
+    public static String URL_LOGIN = "http://192.168.1.12/chauvu/emergency/test.php?login_mg=true";
+    public static String URL_LOGOUT = "http://192.168.1.12/chauvu/emergency/test.php?logOut=true";
 }
